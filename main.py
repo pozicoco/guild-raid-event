@@ -2,13 +2,14 @@ import requests
 import time
 from collections import defaultdict
 from supabase import create_client
+import os
 
 URL = "https://api.wynncraft.com/v3/guild/prefix/TNSR"
-DISCORD_WEBHOOK_URL = "https://discord.com/api/webhooks/1545460017946427483/H0x8C9euwP9RWTnOQTFLsd0WopeSeYR_D8BqA8P5OG1lx4UZ1M6soqbgTeu2z4chp9er"
+DISCORD_WEBHOOK_URL = os.getenv("webhook")
 INTERVAL = 60
 
-SUPABASE_URL = "https://vyznuzhcavzgxbqawfau.supabase.co"
-SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZ5em51emhjYXZ6Z3hicWF3ZmF1Iiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc4ODU1NTI2MSwiZXhwIjoyMTA0MTMxMjYxfQ.Iw9WVQ3CPjG3FB3uie8oSn3JklKYo77yvHaLotzb7qA"
+SUPABASE_URL = os.getenv("url")
+SUPABASE_KEY = os.getenv("key")
 
 supabase = create_client(SUPABASE_URL, SUPABASE_KEY)
 
